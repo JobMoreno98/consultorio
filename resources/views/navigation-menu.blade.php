@@ -18,6 +18,9 @@
                     <x-nav-link href="{{ route('pacientes.index') }}" :active="request()->routeIs('pacientes.index')">
                         Pacientes
                     </x-nav-link>
+                    <x-nav-link href="{{ route('citas.index') }}" :active="request()->routeIs('citas.index')">
+                        Citas
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -158,6 +161,10 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('pacientes.index') }}" :active="request()->routeIs('pacientes.index')">
                 Pacientes
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link href="{{ route('citas.index') }}" :active="request()->routeIs('citas.index')">
+                Citas
             </x-responsive-nav-link>
         </div>
 

@@ -11,14 +11,12 @@
         <tbody>
             @foreach ($citas as $item)
                 <tr wire:key="cita--{{ $item->id }}">
-                    <td> {{ $item->paciente->nombre }}</td>
-                    <td> {{ $item->paciente->telefono }}</td>
-                    <td> {{ $item->hora_inicio }}
+                    <td> {{ $item->nombre }}</td>
+                    <td> {{ $item->telefono }}</td>
+                    <td> direcencia {{ $hora - $item->hora_inicio }}
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-
-
 </div>

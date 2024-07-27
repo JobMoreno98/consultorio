@@ -3,15 +3,21 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\Citas as ModelCitas;
+use Illuminate\Support\Facades\DB;
 
 class Citas extends Component
 {
-    public $citas,$date;
+    public $citas, $date, $hora;
     public function mount()
     {
+        date_default_timezone_set('America/Mexico_City');
+        $this->hora = date('H:i:s');
         $this->date = date('Y-m-d');
-        $this->citas = ModelCitas::where('dia', $this->date)->get();
+        $this->citas = DB::table('citas_pacientes')
+            ->where('dia', $this->date)
+            ->orderBy('dia', 'desc')
+            ->orderBy('hora_inicio', 'desc')
+            ->get();
     }
     public function render()
     {
