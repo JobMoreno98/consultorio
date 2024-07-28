@@ -18,6 +18,7 @@ class Citas extends Component
             ->orderBy('dia', 'desc')
             ->orderBy('hora_inicio', 'desc')
             ->get();
+            
     }
     public function render()
     {
