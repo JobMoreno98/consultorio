@@ -13,7 +13,8 @@
                 <tr wire:key="cita--<?php echo e($item->id); ?>">
                     <td> <?php echo e($item->nombre); ?></td>
                     <td> <?php echo e($item->telefono); ?></td>
-                    <td> direcencia <?php echo e($hora - $item->hora_inicio); ?>
+                    <td> Faltan
+                        <?php echo e(date_diff(date_create($item->hora_inicio), date_create($hora))->format('%h horas %i minutos')); ?>
 
                     </td>
                 </tr>

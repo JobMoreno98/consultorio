@@ -570,4 +570,16 @@
 <?php endif; ?>
     </form>
 </div>
+ <?php $__env->slot('calendar', null, []); ?> 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                event: <?php echo json_encode($citas, 15, 512) ?>,
+            });
+            calendar.render();
+        });
+    </script>
+ <?php $__env->endSlot(); ?>
 <?php /**PATH D:\servidor\consultorio\resources\views/livewire/citas-create.blade.php ENDPATH**/ ?>

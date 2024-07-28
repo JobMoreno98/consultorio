@@ -17,7 +17,8 @@
                 </thead>
                 <tbody>
                     @foreach ($citas as $item)
-                        <tr class="border-b-2 border-violet-500 hover:bg-violet-500 hover:text-white hover:rounded hover:opacity-75 hover:ease-in duration-200 " wire:key="cita--{{ $item->id }}">
+                        <tr class="border-b-2 border-violet-500 hover:bg-violet-500 hover:text-white hover:rounded hover:opacity-75 hover:ease-in duration-200 "
+                            wire:key="cita--{{ $item->id }}">
                             <td> {{ $item->nombre }}</td>
                             <td> {{ $item->telefono }}</td>
                             <td> {{ $item->dia }}</td>

@@ -16,9 +16,9 @@
     <!-- Scripts -->
     <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
-
     <!-- Styles -->
     <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::styles(); ?>
+
 
 </head>
 
@@ -72,6 +72,7 @@ if (isset($__slots)) unset($__slots);
             </header>
         <?php endif; ?>
 
+
         <!-- Page Content -->
         <main>
             <?php echo e($slot); ?>
@@ -80,7 +81,7 @@ if (isset($__slots)) unset($__slots);
     </div>
 
     <?php echo $__env->yieldPushContent('modals'); ?>
-
+    <?php echo $__env->yieldPushContent('scripts'); ?>
     <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::scripts(); ?>
 
 </body>

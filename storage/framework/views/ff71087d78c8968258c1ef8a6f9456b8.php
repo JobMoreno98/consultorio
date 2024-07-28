@@ -18,7 +18,8 @@
     <div class="py-12">
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
             <div class="flex justify-center ">
-                <a class="w-80 uppercase text-center mx-2 hover:border-b-indigo-950" href="<?php echo e(route('pacientes.index')); ?>">
+                <a class="w-80 uppercase text-center mx-2 hover:border-b-indigo-950"
+                    href="<?php echo e(route('pacientes.index')); ?>">
                     <?php if (isset($component)) { $__componentOriginal53747ceb358d30c0105769f8471417f6 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal53747ceb358d30c0105769f8471417f6 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.card','data' => ['class' => 'bg-white ']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>

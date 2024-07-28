@@ -33,6 +33,7 @@ class CitasCreate extends Component
         Citas::create($this->only('paciente_id', 'dia', 'hora_inicio', 'hora_fin', 'comentarios'));
         $this->reset(['paciente_id', 'dia', 'hora_inicio', 'hora_fin', 'comentarios']);
         $this->citas = DB::table('citas_pacientes')->orderBy('dia', 'desc')->orderBy('hora_inicio', 'desc')->get();
+        $this->createCita = false;
     }
     public function edit($citaId)
     {
