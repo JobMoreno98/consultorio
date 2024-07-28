@@ -28,9 +28,6 @@
                         <x-input-date class="w-full" wire:model="fecha_nacimiento" />
                         <x-input-error for="fecha_nacimiento" />
                     </div>
-
-
-
                 </div>
 
                 <div class="mb-3">
@@ -53,36 +50,43 @@
         <x-button wire:click="$set('createUser',true)">
             Crear paciente
         </x-button>
-        <h2 class="w-ful text-center my-3">Listado de pacientes</h2>
+        <h2 class="w-ful text-center my-3 uppercase">Listado de pacientes</h2>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 border border-slate-800">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 border border-slate-800 ">
                 <thead class="text-xs  uppercase ">
-                    <tr>
-                        <th scope="col" class="px-6 py-3 text-dark bg-gray-50 border border-slate-800">Nombre</th>
+                    <tr class=" border border-slate-800">
+                        <th scope="col" class="px-6 py-3 text-dark bg-gray-50">Nombre</th>
                         <th scope="col" class="px-6 py-3">Domicilio</th>
                         <th scope="col" class="px-6 py-3">Teléfono</th>
                         <th scope="col" class="px-6 py-3">Acciones</th>
                     </tr>
                 </thead>
-                <tbody class="border border-slate-800">
+                <tbody >
                     @foreach ($pacientes as $item)
                         <tr class="bg-white" wire:key="paciente-{{ $item->id }}">
                             <th
-                                class="px-6 text-dark py-4 font-medium bg-gray-50 whitespace-nowrap border border-slate-800 ">
+                                class="px-6 text-dark py-4 font-medium bg-gray-50 whitespace-nowrap">
                                 {{ $item->nombre }}</th>
                             <td class="px-6 py-4">{{ $item->domicilio }}</td>
                             <td class="px-6 py-4">{{ $item->telefono }}</td>
                             <td class="flex justify-around  ">
-                                <x-button-purple class="text-xs font-medium m-1" wire:click="show({{ $item->id }})">
-                                    Ver más
+                                <x-button-purple class="text-xs font-medium m-1 btn"
+                                    wire:click="show({{ $item->id }})">
+                                    <span class="material-symbols-outlined">
+                                        visibility
+                                    </span>
                                 </x-button-purple>
-                                <x-button class="text-xs font-medium m-1" wire:click="edit({{ $item->id }})">
-                                    Editar
+                                <x-button class="text-xs font-medium m-1 btn" wire:click="edit({{ $item->id }})">
+                                    <span class="material-symbols-outlined">
+                                        edit
+                                    </span>
                                 </x-button>
 
-                                <x-danger-button class="text-xs font-medium m-1"
+                                <x-danger-button class="text-xs font-medium m-1 btn"
                                     wire:click="destroy({{ $item->id }})">
-                                    Eliminar
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>
                                 </x-danger-button>
                             </td>
                         </tr>

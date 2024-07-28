@@ -261,9 +261,6 @@
 <?php unset($__componentOriginalf94ed9c5393ef72725d159fe01139746); ?>
 <?php endif; ?>
                     </div>
-
-
-
                 </div>
 
                 <div class="mb-3">
@@ -386,37 +383,39 @@
 <?php $component = $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561; ?>
 <?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
 <?php endif; ?>
-        <h2 class="w-ful text-center my-3">Listado de pacientes</h2>
+        <h2 class="w-ful text-center my-3 uppercase">Listado de pacientes</h2>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 border border-slate-800">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 border border-slate-800 ">
                 <thead class="text-xs  uppercase ">
-                    <tr>
-                        <th scope="col" class="px-6 py-3 text-dark bg-gray-50 border border-slate-800">Nombre</th>
+                    <tr class=" border border-slate-800">
+                        <th scope="col" class="px-6 py-3 text-dark bg-gray-50">Nombre</th>
                         <th scope="col" class="px-6 py-3">Domicilio</th>
                         <th scope="col" class="px-6 py-3">Teléfono</th>
                         <th scope="col" class="px-6 py-3">Acciones</th>
                     </tr>
                 </thead>
-                <tbody class="border border-slate-800">
+                <tbody >
                     <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $pacientes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr class="bg-white" wire:key="paciente-<?php echo e($item->id); ?>">
                             <th
-                                class="px-6 text-dark py-4 font-medium bg-gray-50 whitespace-nowrap border border-slate-800 ">
+                                class="px-6 text-dark py-4 font-medium bg-gray-50 whitespace-nowrap">
                                 <?php echo e($item->nombre); ?></th>
                             <td class="px-6 py-4"><?php echo e($item->domicilio); ?></td>
                             <td class="px-6 py-4"><?php echo e($item->telefono); ?></td>
                             <td class="flex justify-around  ">
                                 <?php if (isset($component)) { $__componentOriginal65bd9efade0a7922ad5e7820af7d4f2d = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal65bd9efade0a7922ad5e7820af7d4f2d = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button-purple','data' => ['class' => 'text-xs font-medium m-1','wire:click' => 'show('.e($item->id).')']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button-purple','data' => ['class' => 'text-xs font-medium m-1 btn','wire:click' => 'show('.e($item->id).')']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
 <?php $component->withName('button-purple'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'text-xs font-medium m-1','wire:click' => 'show('.e($item->id).')']); ?>
-                                    Ver más
+<?php $component->withAttributes(['class' => 'text-xs font-medium m-1 btn','wire:click' => 'show('.e($item->id).')']); ?>
+                                    <span class="material-symbols-outlined">
+                                        visibility
+                                    </span>
                                  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal65bd9efade0a7922ad5e7820af7d4f2d)): ?>
@@ -429,15 +428,17 @@
 <?php endif; ?>
                                 <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'text-xs font-medium m-1','wire:click' => 'edit('.e($item->id).')']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'text-xs font-medium m-1 btn','wire:click' => 'edit('.e($item->id).')']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'text-xs font-medium m-1','wire:click' => 'edit('.e($item->id).')']); ?>
-                                    Editar
+<?php $component->withAttributes(['class' => 'text-xs font-medium m-1 btn','wire:click' => 'edit('.e($item->id).')']); ?>
+                                    <span class="material-symbols-outlined">
+                                        edit
+                                    </span>
                                  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561)): ?>
@@ -451,15 +452,17 @@
 
                                 <?php if (isset($component)) { $__componentOriginal656e8c5ea4d9a4fa173298297bfe3f11 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal656e8c5ea4d9a4fa173298297bfe3f11 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.danger-button','data' => ['class' => 'text-xs font-medium m-1','wire:click' => 'destroy('.e($item->id).')']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.danger-button','data' => ['class' => 'text-xs font-medium m-1 btn','wire:click' => 'destroy('.e($item->id).')']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
 <?php $component->withName('danger-button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'text-xs font-medium m-1','wire:click' => 'destroy('.e($item->id).')']); ?>
-                                    Eliminar
+<?php $component->withAttributes(['class' => 'text-xs font-medium m-1 btn','wire:click' => 'destroy('.e($item->id).')']); ?>
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>
                                  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal656e8c5ea4d9a4fa173298297bfe3f11)): ?>
