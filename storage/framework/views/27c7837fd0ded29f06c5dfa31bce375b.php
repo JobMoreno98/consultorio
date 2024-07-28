@@ -394,11 +394,10 @@
                         <th scope="col" class="px-6 py-3">Acciones</th>
                     </tr>
                 </thead>
-                <tbody >
+                <tbody>
                     <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $pacientes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr class="bg-white" wire:key="paciente-<?php echo e($item->id); ?>">
-                            <th
-                                class="px-6 text-dark py-4 font-medium bg-gray-50 whitespace-nowrap">
+                            <th class="px-6 text-dark py-4 font-medium bg-gray-50 whitespace-nowrap">
                                 <?php echo e($item->nombre); ?></th>
                             <td class="px-6 py-4"><?php echo e($item->domicilio); ?></td>
                             <td class="px-6 py-4"><?php echo e($item->telefono); ?></td>
@@ -612,7 +611,6 @@
 <?php unset($__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1); ?>
 <?php endif; ?>
                 </div>
-
                 <div class="mb-3">
                     <?php if (isset($component)) { $__componentOriginald8ba2b4c22a13c55321e34443c386276 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald8ba2b4c22a13c55321e34443c386276 = $attributes; } ?>
@@ -623,9 +621,7 @@
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes([]); ?>
-                        Domicilio:
-                     <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes([]); ?>  Domicilio:  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald8ba2b4c22a13c55321e34443c386276)): ?>
 <?php $attributes = $__attributesOriginald8ba2b4c22a13c55321e34443c386276; ?>
@@ -657,8 +653,9 @@
 <?php endif; ?>
                 </div>
 
-                <div class="mb-3 flex flex-row items-center">
-                    <?php if (isset($component)) { $__componentOriginald8ba2b4c22a13c55321e34443c386276 = $component; } ?>
+                <div class="mb-3 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:me-2">
+                        <?php if (isset($component)) { $__componentOriginald8ba2b4c22a13c55321e34443c386276 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald8ba2b4c22a13c55321e34443c386276 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.label','data' => ['class' => 'mx-2']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
 <?php $component->withName('label'); ?>
@@ -667,9 +664,7 @@
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'mx-2']); ?>
-                        Teléfono:
-                     <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes(['class' => 'mx-2']); ?> Teléfono:  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald8ba2b4c22a13c55321e34443c386276)): ?>
 <?php $attributes = $__attributesOriginald8ba2b4c22a13c55321e34443c386276; ?>
@@ -679,16 +674,16 @@
 <?php $component = $__componentOriginald8ba2b4c22a13c55321e34443c386276; ?>
 <?php unset($__componentOriginald8ba2b4c22a13c55321e34443c386276); ?>
 <?php endif; ?>
-                    <?php if (isset($component)) { $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $component; } ?>
+                        <?php if (isset($component)) { $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['class' => 'w-64','wire:model' => 'pacienteInfo.telefono']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input','data' => ['class' => 'w-full','wire:model' => 'pacienteInfo.telefono']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
 <?php $component->withName('input'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'w-64','wire:model' => 'pacienteInfo.telefono']); ?>
+<?php $component->withAttributes(['class' => 'w-full','wire:model' => 'pacienteInfo.telefono']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginalc2fcfa88dc54fee60e0757a7e0572df1)): ?>
@@ -699,8 +694,9 @@
 <?php $component = $__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1; ?>
 <?php unset($__componentOriginalc2fcfa88dc54fee60e0757a7e0572df1); ?>
 <?php endif; ?>
-
-                    <?php if (isset($component)) { $__componentOriginald8ba2b4c22a13c55321e34443c386276 = $component; } ?>
+                    </div>
+                    <div class="w-full md:ms-2">
+                        <?php if (isset($component)) { $__componentOriginald8ba2b4c22a13c55321e34443c386276 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald8ba2b4c22a13c55321e34443c386276 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.label','data' => ['class' => 'mx-2']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
 <?php $component->withName('label'); ?>
@@ -709,9 +705,7 @@
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'mx-2']); ?>
-                        Fecha de Nacimiento:
-                     <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes(['class' => 'mx-2']); ?>  Fecha de Nacimiento:  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginald8ba2b4c22a13c55321e34443c386276)): ?>
 <?php $attributes = $__attributesOriginald8ba2b4c22a13c55321e34443c386276; ?>
@@ -721,16 +715,16 @@
 <?php $component = $__componentOriginald8ba2b4c22a13c55321e34443c386276; ?>
 <?php unset($__componentOriginald8ba2b4c22a13c55321e34443c386276); ?>
 <?php endif; ?>
-                    <?php if (isset($component)) { $__componentOriginal31be8fa08bbaed32bea3c4528e14c2f7 = $component; } ?>
+                        <?php if (isset($component)) { $__componentOriginal31be8fa08bbaed32bea3c4528e14c2f7 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal31be8fa08bbaed32bea3c4528e14c2f7 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input-date','data' => ['wire:model' => 'pacienteInfo.fecha_nacimiento']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input-date','data' => ['class' => 'w-full','wire:model' => 'pacienteInfo.fecha_nacimiento']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
 <?php $component->withName('input-date'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['wire:model' => 'pacienteInfo.fecha_nacimiento']); ?>
+<?php $component->withAttributes(['class' => 'w-full','wire:model' => 'pacienteInfo.fecha_nacimiento']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal31be8fa08bbaed32bea3c4528e14c2f7)): ?>
@@ -741,6 +735,7 @@
 <?php $component = $__componentOriginal31be8fa08bbaed32bea3c4528e14c2f7; ?>
 <?php unset($__componentOriginal31be8fa08bbaed32bea3c4528e14c2f7); ?>
 <?php endif; ?>
+                    </div>
                 </div>
 
                 <div class="mb-3">

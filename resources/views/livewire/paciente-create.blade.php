@@ -61,11 +61,10 @@
                         <th scope="col" class="px-6 py-3">Acciones</th>
                     </tr>
                 </thead>
-                <tbody >
+                <tbody>
                     @foreach ($pacientes as $item)
                         <tr class="bg-white" wire:key="paciente-{{ $item->id }}">
-                            <th
-                                class="px-6 text-dark py-4 font-medium bg-gray-50 whitespace-nowrap">
+                            <th class="px-6 text-dark py-4 font-medium bg-gray-50 whitespace-nowrap">
                                 {{ $item->nombre }}</th>
                             <td class="px-6 py-4">{{ $item->domicilio }}</td>
                             <td class="px-6 py-4">{{ $item->telefono }}</td>
@@ -140,24 +139,20 @@
                     </x-label>
                     <x-input class="w-full" wire:model="pacienteInfo.nombre" />
                 </div>
-
                 <div class="mb-3">
-                    <x-label>
-                        Domicilio:
-                    </x-label>
+                    <x-label>  Domicilio: </x-label>
                     <x-input class="w-full" wire:model="pacienteInfo.domicilio" />
                 </div>
 
-                <div class="mb-3 flex flex-row items-center">
-                    <x-label class="mx-2">
-                        Teléfono:
-                    </x-label>
-                    <x-input class="w-64" wire:model="pacienteInfo.telefono" />
-
-                    <x-label class="mx-2">
-                        Fecha de Nacimiento:
-                    </x-label>
-                    <x-input-date wire:model="pacienteInfo.fecha_nacimiento" />
+                <div class="mb-3 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:me-2">
+                        <x-label class="mx-2"> Teléfono: </x-label>
+                        <x-input class="w-full" wire:model="pacienteInfo.telefono" />
+                    </div>
+                    <div class="w-full md:ms-2">
+                        <x-label class="mx-2">  Fecha de Nacimiento: </x-label>
+                        <x-input-date class="w-full" wire:model="pacienteInfo.fecha_nacimiento" />
+                    </div>
                 </div>
 
                 <div class="mb-3">

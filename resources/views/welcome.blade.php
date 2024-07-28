@@ -21,10 +21,13 @@
                 </a>
                 <div class="p-5 text-center">
                     <h3 class="uppercase text-center my-3 py-3">consultorio dra. isabel</h3>
-                    <a href="{{ route('login') }}"
-                        class="mx-4 p-3 rounded-lg transition-all delay-150 font-semibold text-gray-600 hover:text-white hover:bg-violet-600 hover:border-b-2  hover:border-b-indigo-950  ">{{ __('Login') }}</a>
-                    <a href="{{ route('register') }}"
-                        class="mx-4 p-3 rounded-lg transition-all delay-150 font-semibold text-gray-600 hover:text-white hover:bg-violet-600  hover:border-b-2   hover:border-b-indigo-950 ">{{ __('Register') }}</a>
+                    <div class="flex md:flex-row flex-col">
+                        <a href="{{ route('login') }}"
+                            class="mx-4 p-3 rounded-lg transition-all delay-150 font-semibold text-gray-600 hover:text-white hover:bg-violet-600 hover:border-b-2  hover:border-b-indigo-950  ">{{ __('Login') }}</a>
+                        <a href="{{ route('register') }}"
+                            class="mx-4 p-3 rounded-lg transition-all delay-150 font-semibold text-gray-600 hover:text-white hover:bg-violet-600  hover:border-b-2   hover:border-b-indigo-950 ">{{ __('Register') }}</a>
+                    </div>
+
                 </div>
             </div>
         </div>
