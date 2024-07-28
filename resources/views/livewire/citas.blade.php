@@ -14,7 +14,9 @@
                 <tr wire:key="cita--{{ $item->id }}">
                     <td> {{ $item->nombre }}</td>
                     <td> {{ $item->telefono }}</td>
-                    <td> {{ date_diff(date_create($item->hora_inicio), date_create($hora))->format('%h horas %i minutos') }}</td>
+                    <td>{{ $item->hora_inicio }}</td>
+                    <td> {{ date_diff(date_create($item->hora_inicio), date_create($hora))->format('%h horas %i minutos') }}
+                    </td>
                 </tr>
             @endforeach
         </tbody>
