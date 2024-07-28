@@ -8,13 +8,13 @@
     <div class="py-12">
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
             <div class="flex justify-center ">
-                <a class="w-80 uppercase text-center mx-2" href="{{ route('pacientes.index') }}">
+                <a class="w-80 uppercase text-center mx-2 hover:border-b-indigo-950" href="{{ route('pacientes.index') }}">
                     <x-card class="bg-white ">
                         Ver pacientes
                     </x-card>
                 </a>
                 <a class="w-80 uppercase text-center mx-2 " href="{{ route('citas.index') }}">
-                    <x-card class="bg-white hover:bg-dark">
+                    <x-card class="bg-white hover:bg-dark hover:border-b-indigo-950 ">
                         Ver citas
                     </x-card>
 
