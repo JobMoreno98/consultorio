@@ -15,9 +15,9 @@ return new class extends Migration {
             $table->unsignedBigInteger('paciente_id');
             $table->foreign('paciente_id')->references('id')->on('pacientes');
             $table->date('dia');
-            $table->time("hora_inicio");            
-            $table->time("hora_fin"); 
-            $table->text('comentarios');            
+            $table->time("hora_inicio");
+            $table->time("hora_fin")->nullable();
+            $table->text('comentarios');
             $table->timestamps();
         });
     }

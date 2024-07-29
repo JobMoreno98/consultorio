@@ -35,7 +35,8 @@
                 </thead>
                 <tbody>
                     <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $citas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <tr class="border-b-2 border-violet-500 hover:bg-violet-500 hover:text-white hover:rounded hover:opacity-75 hover:ease-in duration-200 " wire:key="cita--<?php echo e($item->id); ?>">
+                        <tr class="border-b-2 border-violet-500 hover:bg-violet-500 hover:text-white hover:rounded hover:opacity-75 hover:ease-in duration-200 "
+                            wire:key="cita--<?php echo e($item->id); ?>">
                             <td> <?php echo e($item->nombre); ?></td>
                             <td> <?php echo e($item->telefono); ?></td>
                             <td> <?php echo e($item->dia); ?></td>
@@ -570,16 +571,4 @@
 <?php endif; ?>
     </form>
 </div>
- <?php $__env->slot('calendar', null, []); ?> 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                event: <?php echo json_encode($citas, 15, 512) ?>,
-            });
-            calendar.render();
-        });
-    </script>
- <?php $__env->endSlot(); ?>
 <?php /**PATH D:\servidor\consultorio\resources\views/livewire/citas-create.blade.php ENDPATH**/ ?>

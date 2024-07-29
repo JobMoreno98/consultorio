@@ -1,25 +1,43 @@
 <div>
     <h3 class="uppercase text-center my-4">Listado de citas de hoy <?php echo e($date); ?></h3>
-    <table class="w-full text-left">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Teléfono</th>
-                <th>Hora</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $citas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <tr wire:key="cita--<?php echo e($item->id); ?>">
-                    <td> <?php echo e($item->nombre); ?></td>
-                    <td> <?php echo e($item->telefono); ?></td>
-                    <td> Faltan
-                        <?php echo e(date_diff(date_create($item->hora_inicio), date_create($hora))->format('%h horas %i minutos')); ?>
+    <div id='calendar'></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var data = <?php echo json_encode($citas, 15, 512) ?>;
+            //console.log(data)
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                lang: 'es',
+                selectable: true,
+                headerToolbar: {
+                    left: 'prev,next',
+                    center: 'title',
+                    end: 'today,dayGridMonth,timeGridWeek,timeGridDay', // user can switch between the two
+                },
+                navLinks: true,
+                navLinkDayClick: function(date, jsEvent) {
+                    console.log('day', date.toISOString());
+                    console.log('coords', jsEvent.pageX, jsEvent.pageY);
+                },
+                select: function(info) {
+                    alert('selected ' + info.startStr + ' to ' + info.endStr);
+                }
+            });
 
-                    </td>
-                </tr>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
-        </tbody>
-    </table>
+            calendar.render();
+            data.forEach(element => {
+                var evento = calendar.addEvent({
+                    title: element['nombre'],
+                    start: element['dia'] + "T" + element['hora_inicio'],
+                    end: element['dia'] + "T" + element['hora_fin'],
+                    backgroundColor: element['color'],
+
+                })
+                console.log(evento)
+            });
+
+        });
+    </script>
 </div>
 <?php /**PATH D:\servidor\consultorio\resources\views/livewire/citas.blade.php ENDPATH**/ ?>

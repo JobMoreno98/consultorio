@@ -15,7 +15,11 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- Scripts -->
     <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
+
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
+
+    <link rel = "stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
     <!-- Styles -->
     <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::styles(); ?>
 
@@ -81,8 +85,8 @@ if (isset($__slots)) unset($__slots);
     </div>
 
     <?php echo $__env->yieldPushContent('modals'); ?>
-    <?php echo $__env->yieldPushContent('scripts'); ?>
     <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::scripts(); ?>
+
 
 </body>
 

@@ -15,7 +15,11 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <link rel = "stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
     <!-- Styles -->
     @livewireStyles
 
@@ -44,8 +48,8 @@
     </div>
 
     @stack('modals')
-    @stack('scripts')
     @livewireScripts
+
 </body>
 
 </html>

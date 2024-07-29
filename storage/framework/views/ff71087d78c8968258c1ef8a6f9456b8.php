@@ -97,4 +97,11 @@ if (isset($__slots)) unset($__slots);
 <?php $component = $__componentOriginal9ac128a9029c0e4701924bd2d73d7f54; ?>
 <?php unset($__componentOriginal9ac128a9029c0e4701924bd2d73d7f54); ?>
 <?php endif; ?>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script>
+
+    </script>
+
 <?php /**PATH D:\servidor\consultorio\resources\views/dashboard.blade.php ENDPATH**/ ?>
