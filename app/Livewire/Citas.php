@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class Citas extends Component
 {
     public $citas, $date, $hora;
+    public $openModal = false;
     public function mount()
     {
         date_default_timezone_set('America/Mexico_City');
@@ -22,6 +23,7 @@ class Citas extends Component
             $value->color = $this->hora > $value->hora_inicio ? 'red' : 'green';
         }
     }
+
     public function render()
     {
         return view('livewire.citas');

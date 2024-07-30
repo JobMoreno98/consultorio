@@ -1,3 +1,9 @@
-.btn{
-padding: 5px 10px 3px;
+.btn {
+    padding: 5px 10px 3px;
+}
+
+@media(max-width:600px) {
+    .fc-toolbar{
+        flex-direction: column;
+    }
 }

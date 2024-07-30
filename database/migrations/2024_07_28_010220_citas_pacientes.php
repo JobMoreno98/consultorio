@@ -10,7 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        DB::statement('CREATE OR REPLACE  VIEW citas_pacientes as SELECT citas.*,pacientes.nombre,pacientes.telefono,pacientes.comentarios as comentarios_paciente FROM citas left JOIN pacientes ON pacientes.id = citas.paciente_id and pacientes.deleted_at is null;');
+        DB::statement('CREATE OR REPLACE  VIEW citas_pacientes as SELECT citas.*,pacientes.nombre,pacientes.telefono,pacientes.comentarios as comentarios_paciente,pacientes.deleted_at as activo FROM citas left JOIN pacientes ON pacientes.id = citas.paciente_id and pacientes.deleted_at is null;');
     }
 
     /**
