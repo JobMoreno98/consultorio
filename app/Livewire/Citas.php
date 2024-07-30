@@ -19,6 +19,7 @@ class Citas extends Component
             ->orderBy('dia', 'desc')
             ->orderBy('hora_inicio', 'desc')
             ->get();
+            
         foreach ($this->citas as $key => $value) {
             $value->color = $this->hora > $value->hora_inicio ? 'red' : 'green';
         }

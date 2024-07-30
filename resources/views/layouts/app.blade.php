@@ -20,7 +20,6 @@
 
     <link rel = "stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
-    <link rel="stylesheet" href="https://fullcalendar.io/releases/fullcalendar/3.8.0/fullcalendar.print.min.css">
     <!-- Styles -->
     @livewireStyles
 
