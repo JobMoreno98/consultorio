@@ -26,7 +26,7 @@
                             <td>
                                 <x-button class="text-xs font-medium m-1 btn">
                                     <span class="material-symbols-outlined" wire:click="edit({{ $item->id }})">
-                                        edit
+                                        visibility
                                     </span>
                                 </x-button>
                             </td>
@@ -63,9 +63,15 @@
                     </div>
                     <div class="w-64">
                         <x-label>
-                            Hora de la cita
+                            Inicio de la cita
                         </x-label>
                         <x-input-time class="w-full" wire:model="hora_inicio" />
+                    </div>
+                    <div class="w-64">
+                        <x-label>
+                            Fin de la cita
+                        </x-label>
+                        <x-input-time class="w-full" wire:model="createCita.hora_fin" />
                     </div>
                 </div>
                 <div>
@@ -95,7 +101,7 @@
                     <x-label>
                         Nombre del paciente
                     </x-label>
-                    <x-select class="w-full" wire:model="cita.paciente_id">
+                    <x-select class="w-full" wire:model="citaEdit.paciente_id">
                         <option selected>Elegir</option>
                         @foreach ($pacientes as $item)
                             <option wire:key="paciente--{{ $item->id }}" value="{{ $item->id }}">
@@ -108,20 +114,35 @@
                         <x-label>
                             Fecha de la cita
                         </x-label>
-                        <x-input-date class="w-full" wire:model="cita.dia" />
+                        <x-input-date class="w-full" wire:model="citaEdit.dia" />
                     </div>
                     <div class="w-64">
                         <x-label>
-                            Hora de la cita
+                            Inicio de la cita
                         </x-label>
-                        <x-input-time class="w-full" wire:model="cita.hora_inicio" />
+                        <x-input-time class="w-full" wire:model="citaEdit.hora_inicio" />
+                    </div>
+                    <div class="w-64">
+                        <x-label>
+                            Fin de la cita
+                        </x-label>
+                        <x-input-time class="w-full" wire:model="citaEdit.hora_fin" />
                     </div>
                 </div>
                 <div>
                     <x-label>
                         Comentarios
                     </x-label>
-                    <x-textarea class="w-full" wire:model="cita.comentarios"></x-textarea>
+                    <x-textarea class="w-full" wire:model="citaEdit.comentarios"></x-textarea>
+                </div>
+
+                <div class="flex justify-center">
+                    <x-danger-button wire:click="delete">
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                        Eliminar
+                    </x-danger-button>
                 </div>
             </x-slot>
             <x-slot name="footer">

@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Pacientes;
 use Illuminate\Support\Facades\DB;
 use App\Models\Citas;
+use App\Livewire\Forms\CitaCreateForm;
 
 class CitasCreate extends Component
 {
@@ -21,6 +22,7 @@ class CitasCreate extends Component
         'hora_fin' => '',
         'comentarios' => '',
     ];
+    public CitaCreateForm $citaEdit;
 
     public function mount()
     {
@@ -37,13 +39,16 @@ class CitasCreate extends Component
     }
     public function edit($citaId)
     {
-        $cita = Citas::with('paciente')->find($citaId);
-        $this->cita['paciente_id'] = $cita->paciente_id;
-        $this->cita['dia'] = $cita->dia;
-        $this->cita['hora_inicio'] = $cita->hora_inicio;
-        $this->cita['hora_fin'] = $cita->hora_fin;
-        $this->cita['comentarios'] = $cita->comentarios;
+        $this->citaEdit->edit($citaId);
         $this->updateCita = true;
+    }
+    public function delete()
+    {
+        $id = $this->citaEdit->citaId;
+        $cita = Citas::find($id);
+        $cita->delete();
+        $this->citas = DB::table('citas_pacientes')->orderBy('dia', 'desc')->orderBy('hora_inicio', 'desc')->get();
+        $this->updateCita = false;
     }
     public function render()
     {

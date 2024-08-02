@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->time("hora_inicio");
             $table->time("hora_fin")->nullable();
             $table->text('comentarios');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

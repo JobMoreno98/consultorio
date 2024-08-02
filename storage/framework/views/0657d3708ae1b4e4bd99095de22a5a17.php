@@ -12,4 +12,4 @@
 } ?>
 <?php unset($__defined_vars); ?>
 
-<input type="time" <?php echo e($disabled ? 'disabled' : ''); ?> <?php echo $attributes->merge(['class' => 'border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm']); ?>><?php /**PATH C:\wamp64\www\consultorio\resources\views/components/input-time.blade.php ENDPATH**/ ?>
+<input min="07:00" max="22:00" type="time" <?php echo e($disabled ? 'disabled' : ''); ?> <?php echo $attributes->merge(['class' => 'border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm']); ?>><?php /**PATH C:\wamp64\www\consultorio\resources\views/components/input-time.blade.php ENDPATH**/ ?>
